@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title>City</title>
+  <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+  <h2>Ingredients</h2>
+<p>Ingredient stock</p>
+
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>state code</th>
+    <th>state</th>
+
+
+  </tr>
+
+
+  <tr>
+
+    <td>
+        <a href="{% url "survey:update_city" city.id %}">{{ city.name }}</a>
+    </td>
+    <td>{{city.state_code}}</td>
+    <td>{{city.state}}</td>
+
+
+  </tr>
+  {% endfor  %}
+</table>

@@ -1,0 +1,33 @@
+{% extends 'survey/base.html' %}
+
+{% block title %}City{% endblock %}
+{% block content %}
+
+<div class="home">
+    <div>
+        <h2>All States</h2>
+        <table class="inventory-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>State Code</th>
+                    <th>No of Cities</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            {% for state in total_city_in_state %}
+                <tr>
+                    <td>{{ state.name }}</td>
+                    <td>{{ state.state_code }}</td>
+                    <td>{{state.cities}}</td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,24 @@
+<div class="home">
+    <div>
+        <h2>{{state}}</h2>
+        <table class="inventory-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>state</th>
+                    <th>state_code</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            {%  for city in state.cities.all %}
+                <tr>
+                    <td>{{ city.name }}</td>
+                    <td>{{ city.state }}</td>
+                    <td>{{city.state_code}}</td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>

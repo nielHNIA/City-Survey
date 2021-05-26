@@ -1,0 +1,82 @@
+{%  extends 'survey/base.html' %}
+{% block content %}
+
+<html>
+<head>
+  <title>City</title>
+  <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+  <h2>City Survey</h2>
+<p>Cities Information</p>
+<a href="{% url 'survey:new_city' %} ">Add New City Info</a>
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>state code</th>
+    <th>state</th>
+    <th>population_total</th>
+    <th>population_male</th>
+    <th>population_female</th>
+    <th>population_child_total</th>
+    <th>population_child_male</th>
+    <th>population_child_female</th>
+    <th>literate_total</th>
+    <th>city.literate_male</th>
+    <th>literate_female</th>
+    <th>sex_ratio</th>
+    <th>child_sex_ratio</th>
+    <th>effective_literacy_rate_total</th>
+    <th>effective_literacy_rate_male</th>
+    <th>effective_literacy_rate_female</th>
+    <th>location</th>
+    <th>total_graduates</th>
+    <th>male_graduates</th>
+    <th>female_graduates</th>
+
+
+  </tr>
+  {% for city in object_list %}
+
+  <tr>
+
+    <td>
+        {{ city.name }}
+    </td>
+    <td>{{city.state.state_code}}</td>
+    <td>{{city.state.name}}</td>
+
+    <td>{{city.population_total}}</td>
+    <td>{{    city.population_male}}</td>
+  <td>{{      city.population_female}}</td>
+  <td>{{      city.population_child_total}}</td>
+  <td>{{      city.population_child_male}}</td>
+  <td>{{      city.population_child_female}}</td>
+  <td>{{      city.literate_total}}</td>
+  <td>{{      city.literate_male}}</td>
+  <td>{{      city.literate_female}}</td>
+  <td>{{      city.sex_ratio}}</td>
+  <td>{{      city.child_sex_ratio}}</td>
+  <td>{{      city.effective_literacy_rate_total}}</td>
+  <td>{{      city.effective_literacy_rate_male}}</td>
+  <td>{{      city.effective_literacy_rate_female}}</td>
+  <td>{{      city.location }}</td>
+  <td>{{      city.total_graduates }}</td>
+  <td>{{      city.male_graduates }}</td>
+  <td>{{      city.female_graduates}}</td>
+
+
+  </tr>
+  {% endfor  %}
+</table>
+{% endblock content %}

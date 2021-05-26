@@ -1,0 +1,26 @@
+{%  extends 'survey/base.html' %}
+
+{%  block content %}
+<div>
+    <h2>State with cities</h2>
+    <ul class="menu-items">
+    {% for state in total_city_in_state %}
+        <li>
+            <div class="menu-item-header">
+                <div class="menu-item-title">Name {{ state.name }}</div>
+                <div class="menu-item-price">State Code {{ state.state_code}}</div>
+                <div class="menu-item-price">Total No Of Cities{{ state.cities}}</div>
+            </div>
+
+            <ul class="menu-item-ingredients">
+
+                {% for city in  state.city_set.all %}
+                <li>{{ city.name }}</li>
+
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
